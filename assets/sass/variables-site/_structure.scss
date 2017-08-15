@@ -1,0 +1,568 @@
+$size__site-main: 100%;
+$size__site-sidebar: 25%;
+$tabwidth: 600px;
+$midwidth: 900px;
+$deskwidth: 1200px;
+$largedeskwidth: 1280px;
+
+.clear {clear: both;}
+.site {
+	position: relative;
+}
+div {
+	white-space: wrap;
+
+	/* Adds a hyphen where the word breaks, if supported (No Blink) */
+	// -ms-hyphens: auto;
+	// -moz-hyphens: auto;
+	// -webkit-hyphens: auto;
+	// hyphens: auto;
+}
+.wrapper {
+	width: 100%;
+	margin: 0px auto;
+	padding: 20px;
+	position: relative;
+	
+	@media screen and (min-width: $tabwidth) {
+		
+	}
+	@media screen and (min-width: $deskwidth) {
+		
+		padding: 20px 5%;
+	}
+}
+.tabs-wrapper {
+	width: 100%;
+	margin: 0px auto;
+	padding: 20px;
+	overflow: hidden;
+	position: relative;
+	border-top: 1px solid $color-light-grey;
+	border-bottom: 1px solid $color-light-grey;
+	margin-top: -1px;
+	
+	@media screen and (min-width: $tabwidth) {
+		
+	}
+	@media screen and (min-width: $deskwidth) {
+		
+		padding: 0px 10%;
+	}
+}
+.content-wrapper {
+	width: 100%;
+	margin: 0px auto;
+	padding: 20px;
+	overflow: hidden;
+	position: relative;
+	
+	@media screen and (min-width: $tabwidth) {
+		
+	}
+	@media screen and (min-width: $deskwidth) {
+		
+		padding: 20px 10%;
+	}
+}
+.tab-wrapper {
+	width: 100%;
+	margin: 0px auto;
+	padding: 0 20px;
+	overflow: hidden;
+	position: relative;
+	
+	@media screen and (min-width: $tabwidth) {
+		
+	}
+	@media screen and (min-width: $deskwidth) {
+		
+		padding: 0 10%;
+	}
+}
+.small-wrapper {
+	width: 100%;
+	margin: 0px auto;
+	padding: 20px;
+	overflow: hidden;
+	position: relative;
+
+	h1 {
+		text-align: center;
+	}
+	
+	@media screen and (min-width: $tabwidth) {
+		
+	}
+	@media screen and (min-width: $deskwidth) {
+		width: 70%;
+		padding: 20px 10%;
+	}
+}
+header#masthead {
+	border-bottom: 1px solid #E5E5E4;
+	overflow: hidden;
+
+	@media screen and (min-width: $midwidth) {
+		overflow: visible;
+		height: 170px;
+	}
+	@media screen and (min-width: $deskwidth) {
+		height: 140px;
+	}
+}
+body.home header#masthead {
+	overflow: hidden;
+	position: relative;
+	z-index: 2;
+	border-bottom: 0px solid #333;
+
+	@media screen and (min-width: $tabwidth) {
+		overflow: visible;
+	}
+	@media screen and (min-width: $deskwidth) {
+		height: 118px;
+	}
+}
+main.single {
+	@media screen and (min-width: $deskwidth) {
+		min-height: 500px;
+	}
+}
+.content-area {
+	width: 100%;
+	margin: 0px auto;
+	
+	@media screen and (min-width: $tabwidth) {
+		width: 60%;
+		float: left;
+		margin: 0;
+	}
+	@media screen and (min-width: $deskwidth) {
+		/*width: 1200px;*/
+	}
+}
+.content-area-post {
+	width: 100%;
+	margin: 0px auto;
+	
+	@media screen and (min-width: $tabwidth) {
+		width: 65%;
+		float: left;
+		margin: 0;
+	}
+	@media screen and (min-width: $deskwidth) {
+		width: 70%;
+	}
+}
+
+.widget-area {
+	width: 100%;
+	margin: 0px auto;
+	position: relative;
+	z-index: 30;
+	
+	@media screen and (min-width: $tabwidth) {
+		width: 32%;
+		float: right;
+		margin: 50px 0 0 0;
+	}
+	@media screen and (min-width: $deskwidth) {
+		/*width: 1200px;*/
+	}
+}
+.widget-area-post {
+	width: 100%;
+	margin: 0px auto;
+	
+	@media screen and (min-width: $tabwidth) {
+		width: 25%;
+		float: right;
+		margin: 50px 0 0 0;
+		border-left: 1px solid #BBBDC0;
+		padding-left: 5%;
+	}
+	@media screen and (min-width: $deskwidth) {
+		width: 20%;
+	}
+
+	h3 {
+		margin: 0 0 20px 0;
+	}
+	li {
+		width: 100%;
+		position: relative;
+		list-style: none;
+		margin: 0 0 10px 0;
+		font: {
+			size: 14px;
+		}
+		@media screen and (min-width: $tabwidth) {
+			font-size: 12px;
+		}
+		@media screen and (min-width: $deskwidth) {
+			font-size: 14px;
+		}
+		.plus {
+			width: 20px;
+			position: absolute;
+			right: 10px;
+			top: 0;
+			@include transition(all .3s ease);
+			@media screen and (min-width: $tabwidth) {
+				width: 10px;
+			}
+			@media screen and (min-width: $deskwidth) {
+				width: 20px;
+		}
+		}
+		&:hover {
+			.plus {
+				right: 0px;
+			}
+		}
+	}
+	li a {
+		width: auto;
+		display: block;
+		position: relative;
+		display: inline-block;
+		text-transform: uppercase;
+		color: $color-dark-black;
+		text-decoration: none;
+	}
+}
+
+/* Logo */
+.logo , h1.logo {
+	width: 280px;
+	// height: 76px;
+	height: 107px;
+	background: {
+		image: url(images/logo-new.png);
+		size: cover;
+		repeat: no-repeat;
+	}
+	margin: 10px auto 40px auto;
+
+	@media screen and (min-width: $tabwidth) {
+		width: 202px;
+		// height: 55px;
+		height: 77px;
+		
+	}
+	@media screen and (min-width: $midwidth) {
+		float: left;
+		margin: 0 0 30px 0;
+	}
+	@media screen and (min-width: $deskwidth) {
+		width: 202px;
+		// height: 55px;
+		height: 77px;
+		margin: 20px 0 0 ;
+	}
+	@media screen and (min-width: $largedeskwidth) {
+		width: 280px;
+		// height: 76px;
+		height: 107px;
+		margin: 0;
+	}
+}
+.logo a, h1.logo a {
+	width: 280px;
+	// height: 76px;
+	height: 107px;
+	display: block;
+	text-indent: -9000px;
+
+	@media screen and (min-width: $tabwidth) {
+		width: 202px;
+		// height: 55px;
+		height: 77px;
+	}
+	@media screen and (min-width: $midwidth) {
+		
+	}
+	@media screen and (min-width: $deskwidth) {
+		width: 280px;
+		// height: 76px;
+		height: 107px;
+	}
+}
+.top-header	{
+	width: 100%;
+	text-align: center;
+
+	@media screen and (min-width: $midwidth) {
+		width: auto;
+		display: inline-block;
+		float: right;
+		text-align: right;
+	}
+
+	ul {margin: 0;padding: 0;}
+	nav {
+		width: auto;
+		display: inline-block;
+		text-align: center;
+
+		@media screen and (min-width: $tabwidth) {
+			margin: 5px 10px 0 0;
+		}
+	}
+
+	nav li {
+		width: auto;
+		display: inline-block;
+		padding: 5px 10px;
+		font: {
+			family: $font__main;
+			size: 13px;
+		}
+	}
+	nav a {
+		color: $color-dark-grey;
+		text-decoration: none;
+		&:hover, &.active {
+			color: $color-red;
+		}
+	}
+
+	
+
+}
+body.home .top-header	{
+	@media screen and (min-width: $midwidth) {
+		nav a {
+			color: #fff;
+		}
+	}
+}
+
+article {
+	.readmore {
+		width: auto;
+		position: relative;
+		display: inline-block;
+		text-transform: uppercase;
+	}
+	.plus {
+		width: 20px;
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+}
+
+footer.site-footer {
+	background-color: $color-dark-grey;
+	color: #fff;
+	font-size: 12px;
+	width: 100%;
+	position: relative;
+	z-index: 1;
+	float: left;
+	// padding-bottom: 20px;
+	overflow: hidden;
+	a {
+		text-decoration: none;
+		color: #fff;
+		// @include transition(all .3s ease);
+		&:hover {
+			color: $color-red;
+		}
+	}
+
+	.footer-left {
+		width: auto;
+
+		@media screen and (min-width: $tabwidth) {
+			float:left;
+		}
+	}
+	.footer-right {
+		width: auto;
+		margin-top: 15px;
+
+
+		@media screen and (min-width: $tabwidth) {
+			float:right;
+		}
+	}
+	
+	
+	.site-info {
+		width: 100%;
+		position: relative;
+		float: left;
+		text-align: center;
+		@media screen and (min-width: $tabwidth) {
+			padding: 50px 0 50px 5%;
+			width: 70%;	
+			text-align: left;
+		}
+		@media screen and (min-width: $deskwidth) {
+			
+		}
+	}
+}
+.partnership {
+	width: 100%;
+	float: right;
+	padding: 20px 0 120px 0;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+	margin-top: 40px;
+	@media screen and (min-width: $tabwidth) {
+		width: 30%;
+		float: right;
+		padding: 20px 0% 50px 0;
+		margin: 0;
+	}
+	a {
+		width: 100%;
+		position: absolute;
+		top: 0; 
+		left: 0;
+		height: 100%;
+		background-color: $color-dark-grey;
+		@include transition(all ease .0s);
+		&:hover .rollover img {
+			// filter: grayscale(0);
+		}
+		&:hover {
+			// background-color: #fff;
+			background-color: rgba(#fff,1);
+			.rollover-up {
+				opacity: 0;
+			}
+			.rollover-over {
+				opacity: 1;
+			}
+			h3 {
+				&::after {
+					content: '';
+					width: 60%;
+					border-bottom: 1px solid $color-dark-grey;
+					position: absolute; 
+					bottom: -5px;
+					left: 20%;
+				}
+			}
+		}
+		
+	}
+	.rollover-up, .rollover-over {
+		width: 100%;
+		position: absolute;
+		margin-top: 50px;
+		top: 0;
+		left: 0;
+		@media screen and (min-width: $tabwidth) {
+			margin-top: 70px;
+		}
+		@media screen and (min-width: $midwidth) {
+			margin-top: 70px;
+		}
+		@media screen and (min-width: $deskwidth) {
+			margin-top: 70px;
+		}
+		img {
+			width: 100%;
+		}
+	}
+	.rollover-over {
+		z-index: 1;
+		opacity: 0;
+
+	}
+	.rollover-up {
+		z-index: 2;
+		&:hover {
+			opacity: 0;
+		}
+	}
+	.rollover {
+		width: 100%;
+		float: left;
+		img {
+			width: 80%;
+			margin: 0 auto;
+			filter: brightness(100);
+		}
+	}
+	h3 {
+		width: auto;
+		display: inline-block;
+		position: relative;
+		font-weight: normal;
+		margin: 20px auto;
+		font-size: 16px;
+		&::after {
+			content: '';
+			width: 60%;
+			border-bottom: 1px solid #fff;
+			position: absolute; 
+			bottom: -5px;
+			left: 20%;
+		}
+		
+	}
+}
+.icon {
+    display: inline-block;
+    vertical-align: middle;
+}
+.icon--plus > path {
+    
+    fill: #fff;
+    stroke: rgba(255,255,255,0);
+    stroke-width: 0.5;
+    // stroke-linejoin: round;
+}
+.icon--plus-black > path {
+    
+    fill: $color-dark-black;
+    stroke: rgba(255,255,255,0);
+    stroke-width: 0.5;
+    // stroke-linejoin: round;
+}
+.icon--plus-red > path {
+    
+    fill: $color-red;
+    stroke: rgba(255,255,255,0);
+    stroke-width: 0.5;
+    // stroke-linejoin: round;
+}
+.tax-view-listings {
+	width: auto;
+	display: inline-block;
+	position: relative;
+	float: left;
+	font-size: 18px;
+
+	a {
+		text-decoration: none;
+		padding: 0 30px 0 0;
+	}
+
+	.plus {
+		width: 20px;
+		position: absolute;
+		right: 10px;
+		top: 0;
+		@include transition(all .3s ease);
+		@media screen and (min-width: $tabwidth) {
+			width: 10px;
+		}
+		@media screen and (min-width: $deskwidth) {
+			width: 20px;
+	}
+	}
+	&:hover {
+		.plus {
+			right: 0px;
+		}
+	}
+}

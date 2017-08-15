@@ -1,0 +1,258 @@
+.main-navigation {
+	clear: both;
+	display: block;
+	text-align: center;
+	width: 100%;
+
+	@media screen and (min-width: $tabwidth) {
+
+	}
+	@media screen and (min-width: $midwidth) {
+		
+		clear: both;
+		margin-top: 30px;
+	}
+	@media screen and (min-width: $deskwidth) {
+		width: auto;
+		clear: none;
+		float: right;
+		margin-top: 10px;
+	}
+
+	ul {
+		display: none;
+		list-style: none;
+		margin: 0;
+		padding-left: 0;
+
+		ul {
+			
+			
+			
+
+			@media screen and (min-width: $midwidth) {
+				position: absolute;
+				top: 34px;
+				left: -999em;
+				z-index: 99999;
+				background-color: rgba($color-dark-grey, .8);
+				float: left;
+			}
+
+			ul {
+				left: -999em;
+				top: 0;
+			}
+
+			li {
+				margin: 0;
+				border-bottom: 0 solid $color-red;
+
+				font: {
+					family: $font__heading;
+					size: 13px;
+				}
+				@media screen and (min-width: $midwidth) {
+					font-size: 12px;
+					width: auto;
+					text-align: left;
+				}
+				&:hover > ul,
+				&.focus > ul {
+					@media screen and (min-width: $tabwidth) {
+						left: 100%;
+						text-align: left;
+					}
+					
+				}
+			}
+			li.current-menu-item::after {
+				content: '';
+			}
+			a {
+				width: auto;
+
+				@media screen and (min-width: $midwidth) {
+					width: 200px;
+					color: #fff
+				}
+				
+			}
+
+			:hover > a,
+			.focus > a {
+			}
+
+			a:hover,
+			a.focus,
+			a.active {
+				color: $color-red;
+				background-color: #fff;
+			}
+		}
+
+		li:hover > ul,
+		li.focus > ul {
+			left: auto;
+		}
+	}
+	li {
+		width: 100%;
+		display: inline-block;
+		position: relative;
+		margin: 0 0 0 0px;
+		text-transform: uppercase;
+		border-bottom: 1px solid #eee;
+
+		font: {
+			family: $font__heading;
+			size: 15px;
+		}
+		// @media screen and (min-width: $tabwidth) {
+		// 	font-size: 12px;
+			
+		// }
+		@media screen and (min-width: $midwidth) {
+			font-size: 14px;
+			
+			width: auto;
+			border-bottom: 0 solid $color-red;
+		}
+		@media screen and (min-width: $deskwidth) {
+			font-size: 14px;
+			margin-right: 10px;
+			float: left;
+
+			&.last {margin-right: 0;}
+		}
+		@media screen and (min-width: $largedeskwidth) {
+			font-size: 15px;
+		}
+
+		&:hover > a,
+		&.focus > a {
+		}
+	}
+	li.dropdown::after {
+		@media screen and (min-width: $midwidth) {
+			content: url(images/arrow.png);
+		    width: 8px;
+		    height: 6px;
+		    position: absolute;
+		    right: -1px;
+	    	top: 5px;
+	    }
+	}
+	li.dropdown.current-menu-item::after,
+	li.dropdown:hover::after {
+
+		@media screen and (min-width: $midwidth) {
+			content: url(images/arrow-hover.png);
+		    width: 8px;
+		    height: 6px;
+		    position: absolute;
+		    right: -1px;
+	    	top: 5px;
+	    }
+	}
+	a {
+		display: block;
+		text-decoration: none;
+		color: $color-dark-grey;
+		padding: 8px 20px ;
+		@include transition(all .3s ease);
+		@media screen and (min-width: $tabwidth) {
+			padding: 8px 10px ;
+		}
+		@media screen and (min-width: $midwidth) {
+			padding: 8px 10px ;
+		}
+		@media screen and (min-width: $deskwidth) {
+			padding: 8px 12px ;
+		}
+
+		&:hover, .active {
+			background-color: rgba(255,255,255,.3);
+			color: $color-red;
+		}
+	}
+	a.active {
+		color: $color-red;
+	}
+}
+body.home .main-navigation {
+	@media screen and (min-width: $midwidth) {
+		a {
+			color: #fff;
+		}
+	}
+	
+
+	li.dropdown::after {
+		@media screen and (min-width: $midwidth) {
+			content: url(images/arrow-white.png);
+		    width: 8px;
+		    height: 6px;
+		    position: absolute;
+		    right: -1px;
+	    	top: 5px;
+	    }
+	}
+}
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+}
+
+@media screen and (min-width: $midwidth) {
+	.menu-toggle {
+		display: none;
+	}
+	.main-navigation ul {
+		display: block;
+	}
+}
+
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+
+	.site-main & {
+		margin: 0 0 1.5em;
+		overflow: hidden;
+	}
+
+	.nav-previous {
+		float: left;
+		width: 50%;
+	}
+
+	.nav-next {
+		float: right;
+		text-align: right;
+		width: 50%;
+	}
+}
+
+button.menu-toggle {
+	border: 0px;
+	text-shadow: none;
+	background-color: $color-red;
+	color: #fff;
+	box-shadow: none;
+	width: auto;
+	display: inline-block;
+	margin: 20px auto;
+	border-radius: 0;
+	text-transform: uppercase;
+	font: {
+		family: $font__heading;
+		weight :300;
+		size: 20px;
+	}
+	
+	@media screen and (min-width: $midwidth) {
+		display: none;
+	}
+}

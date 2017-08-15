@@ -1,0 +1,115 @@
+$background-white: #fff;
+$background-black: #000;
+// $background: hsl(210, 45, 10);
+.center {
+  width: 100%;
+  text-align: center;
+}
+.soc-show {
+  display: none;
+
+  @media screen and (min-width: $midwidth) {
+    display: inline-block;
+  }
+}
+.soc-hide {
+  display: inline-block;
+
+  @media screen and (min-width: $midwidth) {
+    display: none;
+  }
+}
+.soc {
+  width: 80px;
+  margin: 10px auto;
+ font-size: 0;
+  list-style: none;
+  padding: 0;
+  text-align: center;
+
+  @media screen and (min-width: $midwidth) {
+    margin: 0;
+    float: right;
+    width: auto;
+   }
+  
+  
+  li {
+    display: inline-block;
+    margin: 5px; // IE8
+    width: 30px;
+    height: 30px;
+  }
+    
+  a, svg {
+    display: block;
+  }
+    
+  a {
+    position: relative; // IE8
+    width: 30px;
+    height: 30px;
+  }
+    
+  svg {
+    height: 100%;
+    width: 100%;
+  }
+    
+  // IE8:
+  em {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-top: -.75em;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+    
+}
+// Using placeholder selectors and @extend (keeps output CSS lean) instead of [class*='icon-'] attribute selector because IE8 doesn't support it :<
+
+// %social-icon-hover {
+//   border-radius: 100%;
+//   color: $background; // IE8
+//   fill: $background;
+//   transform: scale(1.25);
+//   transition: background-color .5s, transform .5s ease-out;
+// }
+ 
+
+// Neat color trick, <3 Sass
+@for $i from 1 through 30 {
+  .icon-white-#{$i} {
+    color: rgba($i * 255, 255, 255, 1); // IE8
+    fill: rgba($i * 255, 255, 255, 1);
+      
+      &:hover {
+        background: rgba($i * 255, 255, 255,0);
+          border-radius: 100%;
+          color: $background-white; // IE8
+          fill: $background-white;
+          transform: scale(1.25);
+          transition: background-color .5s, transform .5s ease-out;
+      }
+    }
+ }     
+ // Neat color trick, <3 Sass
+@for $i from 1 through 30 {
+  .icon-black-#{$i} {
+    color: rgba($i * 0, 0, 0, 1); // IE8
+    fill: rgba($i * 0, 0, 0, 1);
+      
+      &:hover {
+        background: rgba($i * 0, 0, 0,0);
+         border-radius: 100%;
+          color: $background-black; // IE8
+          fill: $background-black;
+          transform: scale(1.25);
+          transition: background-color .5s, transform .5s ease-out;
+      }
+    }
+ } 
